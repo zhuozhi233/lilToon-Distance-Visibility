@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir -p release
           zip -r "release/${{ env.packageName }}-${{ steps.version.outputs.version }}.zip" . \
-            -x ".git/*" ".github/*" ".gitignore" "release/*" "LICENSE.meta"
+            -x ".git/*" ".github/*" ".gitignore" "release/*"
 
       - name: 创建 GitHub Release
         uses: softprops/action-gh-release@v2
