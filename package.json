@@ -10,9 +10,6 @@
     "url": "https://github.com/zhuozhi233/lilToon-Distance-Visibility"
   },
   "license": "MIT",
-  "vpmDependencies": {
-    "jp.lilxyzw.liltoon": ">=2.3.0"
-  },
   "keywords": [
     "liltoon",
     "shader",
