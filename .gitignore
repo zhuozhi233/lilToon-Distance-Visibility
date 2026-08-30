@@ -9,3 +9,6 @@ UserSettings/
 
 # Generated release artifacts
 release/
+
+# Unity may regenerate this file locally; do not publish it
+LICENSE.meta
