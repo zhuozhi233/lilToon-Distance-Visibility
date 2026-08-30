@@ -1,0 +1,17 @@
+Shader "Hidden/DistanceVisibility/lilToon/MultiGem"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultGem"
+            lilProperties "lilCustomShaderProperties.lilblock"
+    }
+
+    lilSubShaderTags {"RenderType" = "Opaque" "Queue" = "Transparent-100"}
+    lilSubShaderBRP "DefaultMultiGem"
+    lilSubShaderLWRP "DefaultMultiGem"
+    lilSubShaderURP "DefaultMultiGem"
+    lilSubShaderHDRP "DefaultMultiGem"
+
+    CustomEditor "*LIL_EDITOR_NAME*"
+}

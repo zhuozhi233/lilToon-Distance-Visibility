@@ -1,0 +1,21 @@
+Shader "Hidden/DistanceVisibility/lilToon/ltspass_cutout"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultCutout"
+            lilProperties "lilCustomShaderProperties.lilblock"
+    }
+
+    HLSLINCLUDE
+        #define LIL_RENDER 1
+            #include "custom.hlsl"
+    ENDHLSL
+
+    lilSubShaderInsert "lilCustomShaderInsert.lilblock"
+
+    lilSubShaderBRP "Default"
+    lilSubShaderLWRP "Default"
+    lilSubShaderURP "Default"
+    lilSubShaderHDRP "Default"
+}

@@ -1,0 +1,21 @@
+Shader "Hidden/DistanceVisibility/lilToon/ltspass_opaque"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultOpaque"
+            lilProperties "lilCustomShaderProperties.lilblock"
+    }
+
+    HLSLINCLUDE
+        #define LIL_RENDER 0
+            #include "custom.hlsl"
+    ENDHLSL
+
+    lilSubShaderInsert "lilCustomShaderInsert.lilblock"
+
+    lilSubShaderBRP "Default"
+    lilSubShaderLWRP "Default"
+    lilSubShaderURP "Default"
+    lilSubShaderHDRP "Default"
+}

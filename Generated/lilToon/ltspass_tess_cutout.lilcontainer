@@ -1,0 +1,21 @@
+Shader "Hidden/DistanceVisibility/lilToon/ltspass_tess_cutout"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultCutout"
+            lilProperties "lilCustomShaderProperties.lilblock"
+    }
+
+    HLSLINCLUDE
+        #define LIL_RENDER 1
+            #include "custom.hlsl"
+    ENDHLSL
+
+    lilSubShaderInsert "lilCustomShaderInsert.lilblock"
+
+    lilSubShaderBRP "DefaultTessellation"
+    lilSubShaderLWRP "DefaultTessellation"
+    lilSubShaderURP "DefaultTessellation"
+    lilSubShaderHDRP "DefaultTessellation"
+}

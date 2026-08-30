@@ -1,0 +1,16 @@
+Shader "DistanceVisibility/lilToon/[Optional] FakeShadow"
+{
+    Properties
+    {
+        lilProperties "DefaultFakeShadow"
+            lilProperties "lilCustomShaderProperties.lilblock"
+    }
+
+    lilSubShaderTags {"RenderType" = "Transparent" "Queue" = "AlphaTest+55"}
+    lilSubShaderBRP "DefaultFakeShadow"
+    lilSubShaderLWRP "DefaultFakeShadow"
+    lilSubShaderURP "DefaultFakeShadow"
+    lilSubShaderHDRP "DefaultFakeShadow"
+
+    CustomEditor "*LIL_EDITOR_NAME*"
+}

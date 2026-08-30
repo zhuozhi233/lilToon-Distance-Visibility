@@ -1,0 +1,11 @@
+        // lilToon Distance Visibility
+        [HideInInspector] _DV_Enabled ("Enable Distance Visibility", Float) = 0
+        [HideInInspector] _DV_Mode ("Legacy Distance Mode", Float) = 0
+        [HideInInspector] _DV_NearEnabled ("Enable Near Limit", Float) = 1
+        [HideInInspector] _DV_NearDistance ("Near Distance", Float) = 2.0
+        [HideInInspector] _DV_NearFade ("Near Transition", Float) = 0.2
+        [HideInInspector] _DV_FarEnabled ("Enable Far Limit", Float) = 1
+        [HideInInspector] _DV_FarDistance ("Far Distance", Float) = 5.0
+        [HideInInspector] _DV_FarFade ("Far Transition", Float) = 0.2
+        [HideInInspector] _DV_UseMeshCenter ("Use Mesh Center", Float) = 0
+        [HideInInspector] _DV_Version ("Distance Visibility Version", Float) = 4

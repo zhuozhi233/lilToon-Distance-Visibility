@@ -1,0 +1,61 @@
+name: 构建 VPM Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+env:
+  packageName: "com.zhuozhi.liltoon-distance-visibility"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 获取源码
+        uses: actions/checkout@v4
+
+      - name: 读取版本号
+        id: version
+        shell: bash
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: 校验 package.json 版本
+        shell: bash
+        run: |
+          PACKAGE_VERSION="$(jq -r '.version' package.json)"
+          if [ "$PACKAGE_VERSION" != "${{ steps.version.outputs.version }}" ]; then
+            echo "package.json 版本 $PACKAGE_VERSION 与标签版本 ${{ steps.version.outputs.version }} 不一致"
+            exit 1
+          fi
+
+      - name: 构建 VPM ZIP
+        shell: bash
+        run: |
+          mkdir -p release
+          zip -r "release/${{ env.packageName }}-${{ steps.version.outputs.version }}.zip" . \
+            -x ".git/*" ".github/*" ".gitignore" "release/*"
+
+      - name: 创建 GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "v${{ steps.version.outputs.version }}"
+          name: "lilToon 距离显示 ${{ steps.version.outputs.version }}"
+          draft: false
+          prerelease: ${{ contains(steps.version.outputs.version, '-') }}
+          generate_release_notes: false
+          body: |
+            VPM/VCC 软件包。
+
+            - 为 lilToon 材质添加可配置的近端、远端和区间距离显示
+            - 支持抖动过渡，以及材质球一键添加与移除
+            - 适配 LyumaShader 扩展版；两个功能可按任意顺序添加或移除
+            - ZIP 根目录包含 package.json，可直接通过 VCC 安装
+          files: |
+            release/${{ env.packageName }}-${{ steps.version.outputs.version }}.zip
+            package.json

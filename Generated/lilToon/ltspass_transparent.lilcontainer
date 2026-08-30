@@ -1,0 +1,21 @@
+Shader "Hidden/DistanceVisibility/lilToon/ltspass_transparent"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultTransparent"
+            lilProperties "lilCustomShaderProperties.lilblock"
+    }
+
+    HLSLINCLUDE
+        #define LIL_RENDER 2
+            #include "custom.hlsl"
+    ENDHLSL
+
+    lilSubShaderInsert "lilCustomShaderInsert.lilblock"
+
+    lilSubShaderBRP "DefaultTwoSide"
+    lilSubShaderLWRP "Default"
+    lilSubShaderURP "DefaultTwoSide"
+    lilSubShaderHDRP "DefaultTwoSide"
+}

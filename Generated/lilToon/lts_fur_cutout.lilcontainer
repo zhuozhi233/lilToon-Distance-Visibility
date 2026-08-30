@@ -1,0 +1,23 @@
+Shader "Hidden/DistanceVisibility/lilToon/FurCutout"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultFurCutout"
+            lilProperties "lilCustomShaderProperties.lilblock"
+    }
+
+    HLSLINCLUDE
+        #define LIL_RENDER 1
+            #include "custom.hlsl"
+    ENDHLSL
+
+    lilSubShaderTags {"RenderType" = "TransparentCutout" "Queue" = "AlphaTest"}
+    lilSubShaderInsert "lilCustomShaderInsert.lilblock"
+    lilSubShaderBRP "DefaultFur"
+    lilSubShaderLWRP "DefaultFur"
+    lilSubShaderURP "DefaultFur"
+    lilSubShaderHDRP "DefaultFur"
+
+    CustomEditor "*LIL_EDITOR_NAME*"
+}

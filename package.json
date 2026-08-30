@@ -1,0 +1,22 @@
+{
+  "name": "com.zhuozhi.liltoon-distance-visibility",
+  "version": "0.1.0",
+  "displayName": "lilToon 距离显示",
+  "description": "为指定的 lilToon 材质添加可配置的近端、远端和区间距离显示，并支持抖动过渡与一键还原。",
+  "changelogUrl": "https://github.com/zhuozhi233/lilToon-Distance-Visibility/releases",
+  "unity": "2022.3",
+  "author": {
+    "name": "浊鸷",
+    "url": "https://github.com/zhuozhi233/lilToon-Distance-Visibility"
+  },
+  "license": "MIT",
+  "vpmDependencies": {
+    "jp.lilxyzw.liltoon": ">=2.3.0"
+  },
+  "keywords": [
+    "liltoon",
+    "shader",
+    "distance",
+    "vrchat"
+  ]
+}

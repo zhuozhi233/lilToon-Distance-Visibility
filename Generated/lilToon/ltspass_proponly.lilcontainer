@@ -1,0 +1,22 @@
+Shader "Hidden/DistanceVisibility/lilToon/ltspass_proponly"
+{
+    Properties
+    {
+        lilProperties "DefaultAll"
+            lilProperties "lilCustomShaderProperties.lilblock"
+    }
+
+    SubShader
+    {
+        Pass
+        {
+            Tags {"LightMode" = "Dummy"}
+            HLSLPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            void vert(){}
+            void frag(){}
+            ENDHLSL
+        }
+    }
+}

@@ -1,0 +1,17 @@
+Shader "Hidden/DistanceVisibility/lilToon/MultiOutline"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultOpaque"
+            lilProperties "lilCustomShaderProperties.lilblock"
+    }
+
+    lilSubShaderTags {"RenderType" = "Opaque" "Queue" = "Transparent-100"}
+    lilSubShaderBRP "DefaultMultiOutline"
+    lilSubShaderLWRP "DefaultMultiOutline"
+    lilSubShaderURP "DefaultMultiOutline"
+    lilSubShaderHDRP "DefaultMultiOutline"
+
+    CustomEditor "*LIL_EDITOR_NAME*"
+}
