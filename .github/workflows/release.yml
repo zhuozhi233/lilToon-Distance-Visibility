@@ -52,9 +52,9 @@ jobs:
           body: |
             VPM/VCC 软件包。
 
-            - 为 lilToon 材质添加可配置的近端、远端和区间距离显示
-            - 支持抖动过渡，以及材质球一键添加与移除
-            - 适配 LyumaShader 扩展版；两个功能可按任意顺序添加或移除
+            - 移除未确认的 lilToon 最低版本限制；使用前需要自行安装 lilToon
+            - 修正 Unity 顶部 Tools 菜单路径，避免影响其他插件的工具菜单
+            - 不再提交 Unity 自动生成的 LICENSE.meta
             - ZIP 根目录包含 package.json，可直接通过 VCC 安装
           files: |
             release/${{ env.packageName }}-${{ steps.version.outputs.version }}.zip
