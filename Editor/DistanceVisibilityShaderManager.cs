@@ -759,7 +759,7 @@ namespace DistanceVisibility.Editor
             return material != null ? material : Selection.activeObject as Material;
         }
 
-        [MenuItem("工具/lilToon 距离显示/重新生成 Shader", false, 2100)]
+        [MenuItem("Tools/lilToon 距离显示/重新生成 Shader", false, 2100)]
         private static void RegenerateShaders()
         {
             if(DistanceVisibilityShaderManager.EnsureGeneratedShaders(true))
